@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNMUTE - Sign Translator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Exit Confirmation Screen -->
+  <div class="screen" id="exit-screen">
+    <h1>UNMUTE</h1>
+    <p class="subtitle">SIGN TRANSLATOR</p>
+    <div class="exit-message">Do you want to exit UNMUTE?</div>
+    <button onclick="exitApp()">YES</button>
+    <button onclick="nextScreen('permission-screen')">NO</button>
+  </div>
+
+  <!-- Permission Screen -->
+  <div class="screen hidden" id="permission-screen">
+    <h1>UNMUTE</h1>
+    <p class="subtitle">SIGN TRANSLATOR</p>
+    <p class="permission-text">ACCESS DENIED: NO ACCESS TO CONTROL FILES</p>
+    <p>Allow UNMUTE to access photos and videos?</p>
+    <button onclick="nextScreen('mic-screen')">ALLOW</button>
+    <button onclick="exitApp()">DON'T ALLOW</button>
+  </div>
+
+  <!-- Mic Splash Page -->
+  <div class="screen hidden" id="mic-screen">
+    <h1>UNMUTE</h1>
+    <p class="subtitle">SIGN TRANSLATOR</p>
+    <div class="mic-icon">
+      🎤
+    </div>
+    <button onclick="nextScreen('login-screen')">Continue</button>
+  </div>
+
+  <!-- Login Page -->
+  <div class="screen hidden" id="login-screen">
+    <h1>LOGIN</h1>
+    <input type="email" placeholder="Email" />
+    <input type="password" placeholder="Password" />
+    <button onclick="nextScreen('register-screen')">Login</button>
+    <p class="link" onclick="nextScreen('register-screen')">New user? Register</p>
+  </div>
+
+  <!-- Registration Page -->
+  <div class="screen hidden" id="register-screen">
+    <h1>REGISTER</h1>
+    <input type="email" placeholder="Email" />
+    <input type="password" placeholder="Password" />
+    <input type="password" placeholder="Confirm Password" />
+    <button onclick="nextScreen('welcome-screen')">Register</button>
+  </div>
+
+  <!-- Welcome Screen -->
+  <div class="screen hidden" id="welcome-screen">
+    <h1>UNMUTE</h1>
+    <p class="subtitle">SIGN TRANSLATOR</p>
+    <p class="welcome-msg">
+      Hey Username! As you arrive at this section of our app, we are glad you made it. This translator is dedicated to helping the mute communicate with others. We are here to help you. Happy journey with us!
+    </p>
+    <button onclick="nextScreen('subscription-screen')">Continue</button>
+  </div>
+
+  <!-- Subscription Screen -->
+  <div class="screen hidden" id="subscription-screen">
+    <h1>UNMUTE</h1>
+    <p class="subtitle">SIGN TRANSLATOR</p>
+    <p class="subscription-text">
+      Changing language, font, and voice includes only 20 uploads or slides for free. For further uploading, you need to upgrade the app to premium.
+    </p>
+    <div class="plans">
+      <p>Monthly Plan: $5</p>
+      <p>Yearly Plan: $50</p>
+    </div>
+    <button onclick="nextScreen('mode-screen')">SUBSCRIBE</button>
+  </div>
+
+  <!-- Mode Selection Screen -->
+  <div class="screen hidden" id="mode-screen">
+    <h1>UNMUTE</h1>
+    <p class="subtitle">SIGN TRANSLATOR</p>
+    <p>Signs to:</p>
+    <button onclick="alert('Text translation')">TEXT</button>
+    <button onclick="alert('Voice translation')">VOICE</button>
+    <button onclick="alert('Alarm mode')">ALARM</button>
+  </div>
+
+  <!-- JS Script -->
+  <script src="app.js"></script>
+</body>
+</html>
